@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.game-board {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.cell-hover {
+  transition: transform 0.1s ease;
+}
+
+.cell-hover:hover {
+  transform: scale(1.05);
+}
+
+.piece-drop {
+  animation: dropPiece 0.5s ease-out;
+}
+
+@keyframes dropPiece {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.winner-highlight {
+  animation: winnerGlow 1s ease-in-out infinite alternate;
+}
+
+@keyframes winnerGlow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 1);
+  }
+}
